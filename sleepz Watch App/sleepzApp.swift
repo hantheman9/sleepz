@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct sleepz_Watch_AppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+    
+//    @StateObject var workoutManager = WorkoutManager()
+    
+    @SceneBuilder var body: some Scene {
+        WindowGroup{
+            NavigationView {
+                StartView()
+            }
+           
         }
     }
 }
