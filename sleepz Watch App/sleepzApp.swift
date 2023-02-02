@@ -14,10 +14,7 @@ struct sleepz_Watch_AppApp: App {
     
     @SceneBuilder var body: some Scene {
         WindowGroup{
-            NavigationView {
-                StartView()
-            }
-           
+            AlarmHome()
         }
     }
 }

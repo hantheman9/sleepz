@@ -24,6 +24,8 @@
 		0930A2E9298A320E0081FC85 /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2E8298A320E0081FC85 /* HeartRate.swift */; };
 		0930A2EB298A32340081FC85 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2EA298A32340081FC85 /* AuthorizationManager.swift */; };
 		0930A2ED298A32B50081FC85 /* HKUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2EC298A32B50081FC85 /* HKUnit.swift */; };
+		C0EBA333298C4E4B00778413 /* AlarmHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EBA332298C4E4B00778413 /* AlarmHome.swift */; };
+		C0EBA335298C4E5900778413 /* ReusableComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EBA334298C4E5900778413 /* ReusableComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		0930A2E8298A320E0081FC85 /* HeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
 		0930A2EA298A32340081FC85 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		0930A2EC298A32B50081FC85 /* HKUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKUnit.swift; sourceTree = "<group>"; };
+		C0EBA332298C4E4B00778413 /* AlarmHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHome.swift; sourceTree = "<group>"; };
+		C0EBA334298C4E5900778413 /* ReusableComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				0930A2AC298A21CB0081FC85 /* sleepzApp.swift */,
+				C0EBA334298C4E5900778413 /* ReusableComponents.swift */,
+				C0EBA332298C4E4B00778413 /* AlarmHome.swift */,
 				0930A2AE298A21CB0081FC85 /* StartView.swift */,
 				0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */,
 				0930A2E2298A27920081FC85 /* ControlsView.swift */,
@@ -338,12 +344,14 @@
 			files = (
 				0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */,
 				0930A2E9298A320E0081FC85 /* HeartRate.swift in Sources */,
+				C0EBA335298C4E5900778413 /* ReusableComponents.swift in Sources */,
 				0930A2E5298A2E0E0081FC85 /* WorkoutManager.swift in Sources */,
 				0930A2ED298A32B50081FC85 /* HKUnit.swift in Sources */,
 				0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */,
 				0930A2E1298A26860081FC85 /* ElapsedTimeView.swift in Sources */,
 				0930A2E7298A31DA0081FC85 /* HeartRateManager.swift in Sources */,
 				0930A2DD298A25900081FC85 /* MetricsView.swift in Sources */,
+				C0EBA333298C4E4B00778413 /* AlarmHome.swift in Sources */,
 				0930A2EB298A32340081FC85 /* AuthorizationManager.swift in Sources */,
 				0930A2E3298A27920081FC85 /* ControlsView.swift in Sources */,
 				0930A2DB298A24AB0081FC85 /* SessionPagingView.swift in Sources */,
