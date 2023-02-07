@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006DB1E4298EAE810071AED8 /* PersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DB1E3298EAE810071AED8 /* PersistentController.swift */; };
+		006DB1E5298EAE8E0071AED8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 006DB1E1298DE7820071AED8 /* Model.xcdatamodeld */; };
+		006DB1E8298EC6AC0071AED8 /* TimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DB1E7298EC6AC0071AED8 /* TimeEntity.swift */; };
 		0930A2A8298A21CB0081FC85 /* sleepz Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AC298A21CB0081FC85 /* sleepzApp.swift */; };
 		0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AE298A21CB0081FC85 /* StartView.swift */; };
@@ -67,6 +70,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		006DB1E2298DE7820071AED8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		006DB1E3298EAE810071AED8 /* PersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentController.swift; sourceTree = "<group>"; };
+		006DB1E7298EC6AC0071AED8 /* TimeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntity.swift; sourceTree = "<group>"; };
 		0930A2A1298A21CB0081FC85 /* sleepz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sleepz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sleepz Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2AC298A21CB0081FC85 /* sleepzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepzApp.swift; sourceTree = "<group>"; };
@@ -116,6 +122,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		006DB1E6298EAF2F0071AED8 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				006DB1E3298EAE810071AED8 /* PersistentController.swift */,
+				006DB1E1298DE7820071AED8 /* Model.xcdatamodeld */,
+				006DB1E7298EC6AC0071AED8 /* TimeEntity.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		006DB1E9298ECBEB0071AED8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0EBA332298C4E4B00778413 /* AlarmHome.swift */,
+				0930A2AE298A21CB0081FC85 /* StartView.swift */,
+				0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */,
+				0930A2E2298A27920081FC85 /* ControlsView.swift */,
+				0930A2DC298A25900081FC85 /* MetricsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0930A29A298A21CB0081FC85 = {
 			isa = PBXGroup;
 			children = (
@@ -140,13 +168,10 @@
 		0930A2AB298A21CB0081FC85 /* sleepz Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				006DB1E9298ECBEB0071AED8 /* Views */,
+				006DB1E6298EAF2F0071AED8 /* DB */,
 				0930A2AC298A21CB0081FC85 /* sleepzApp.swift */,
 				C0EBA334298C4E5900778413 /* ReusableComponents.swift */,
-				C0EBA332298C4E4B00778413 /* AlarmHome.swift */,
-				0930A2AE298A21CB0081FC85 /* StartView.swift */,
-				0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */,
-				0930A2E2298A27920081FC85 /* ControlsView.swift */,
-				0930A2DC298A25900081FC85 /* MetricsView.swift */,
 				0930A2E4298A2E0E0081FC85 /* WorkoutManager.swift */,
 				0930A2E8298A320E0081FC85 /* HeartRate.swift */,
 				0930A2E6298A31DA0081FC85 /* HeartRateManager.swift */,
@@ -344,12 +369,15 @@
 			files = (
 				0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */,
 				0930A2E9298A320E0081FC85 /* HeartRate.swift in Sources */,
+				006DB1E5298EAE8E0071AED8 /* Model.xcdatamodeld in Sources */,
 				C0EBA335298C4E5900778413 /* ReusableComponents.swift in Sources */,
 				0930A2E5298A2E0E0081FC85 /* WorkoutManager.swift in Sources */,
 				0930A2ED298A32B50081FC85 /* HKUnit.swift in Sources */,
 				0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */,
+				006DB1E8298EC6AC0071AED8 /* TimeEntity.swift in Sources */,
 				0930A2E1298A26860081FC85 /* ElapsedTimeView.swift in Sources */,
 				0930A2E7298A31DA0081FC85 /* HeartRateManager.swift in Sources */,
+				006DB1E4298EAE810071AED8 /* PersistentController.swift in Sources */,
 				0930A2DD298A25900081FC85 /* MetricsView.swift in Sources */,
 				C0EBA333298C4E4B00778413 /* AlarmHome.swift in Sources */,
 				0930A2EB298A32340081FC85 /* AuthorizationManager.swift in Sources */,
@@ -732,6 +760,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		006DB1E1298DE7820071AED8 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				006DB1E2298DE7820071AED8 /* Model.xcdatamodel */,
+			);
+			currentVersion = 006DB1E2298DE7820071AED8 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0930A29B298A21CB0081FC85 /* Project object */;
 }

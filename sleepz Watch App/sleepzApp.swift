@@ -6,15 +6,21 @@
 //
 
 import SwiftUI
+import CoreData
+
 
 @main
 struct sleepz_Watch_AppApp: App {
-    
 //    @StateObject var workoutManager = WorkoutManager()
-    
+
+    let container = PersistentController.shared.container
     @SceneBuilder var body: some Scene {
         WindowGroup{
-            AlarmHome()
+            NavigationView {
+                AlarmHome()
+            }
+            .environment(\.managedObjectContext, container.viewContext)
         }
     }
 }
+

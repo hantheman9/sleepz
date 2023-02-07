@@ -6,26 +6,80 @@
 //
 
 import SwiftUI
+import CoreData
+import UIKit
 
 struct TimePickerView: View {
-    @State private var selectedStartHour = "1"
-    @State private var selectedStartMinute = "1"
+    @State private var selectedStartHour = ""
+    @State private var selectedStartMinute = "00"
     @State private var selectedStartMeridiem = "am"
+    
+    private var hour = ["1","2","3"]
+    private var minute = ["1","2","3"]
+    private var meridiem = ["am","pm"]
+
+
+    // Getting context from environment
+    @Environment(\.managedObjectContext) var context
+    
+    // Presentation
+    @Environment(\.presentationMode) var presentation
 
     var body: some View {
-        HStack {
-            Picker(selection: $selectedStartHour, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
+        VStack {
+            HStack {
+                Picker(selection: $selectedStartHour, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
+                    ForEach(hour, id: \.self) { startHour in
+                        Text(startHour)
+                        .onTapGesture {
+                            selectedStartHour = startHour
+                        }
+                    }
+                }
+                Picker(selection: $selectedStartMinute, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
+                    ForEach(minute, id: \.self) { startMinute in
+                        Text(startMinute)
+                        .onTapGesture {
+                            selectedStartMinute = startMinute
+                        }
+                    }
+                }
+                Picker(selection: $selectedStartMeridiem, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
+                    ForEach(meridiem, id: \.self) { startMeridiem in
+                        Text(startMeridiem)
+                        .onTapGesture {
+                            selectedStartMeridiem = startMeridiem
+                        }
+                    }
+                }
             }
-            Picker(selection: $selectedStartMinute, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
-            }
-            Picker(selection: $selectedStartMeridiem, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                Text("am").tag(1)
-                Text("pm").tag(2)
-            }
+            Button(action: selectTime, label: {
+                Text("Save")
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            })
+            .buttonStyle(PlainButtonStyle())
+            .disabled(selectedStartHour == "" )
+        }
+    }
+    
+    func selectTime() {
+        let time = AlarmInfo(context: context)
+        
+        time.hour = selectedStartHour
+        time.minute = selectedStartMinute
+        time.meridiem = selectedStartMeridiem
+        time.dateAdded = Date()
+        
+        // Saving
+        do {
+            try context.save()
+            
+            // If success, close view
+            presentation.wrappedValue.dismiss()
+            
+        } catch let err {
+            print(err.localizedDescription)
         }
     }
 }
