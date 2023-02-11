@@ -10,17 +10,13 @@ import SwiftUI
 import CoreData
 
 /***
- 
  For alarmList,
  - isActive (boolean)
  - startTime (integer)
  - endTime (integer)
  - durationRange (integer)
  - days (list of strings)
-  
- */
-
-    
+*/
 
 struct AlarmHome: View {
     
@@ -46,13 +42,14 @@ struct AlarmHome: View {
                         .contentShape(Rectangle())
                     }
                 }
-        
+                
                 NavigationLink(
                     destination: AlarmStartTimeView(),
                     label: {
                         Text("New Alarms")
                     }
                 )
+                
             }
             .overlay(
                 Text(results.isEmpty ? "No alarms set" : "")
@@ -60,39 +57,22 @@ struct AlarmHome: View {
             .navigationTitle("My alarms")
             .navigationBarBackButtonHidden(true)
         }
-        
-//        NavigationStack {
-//            ScrollView{
-//                VStack{
-//                    NavigationLink(
-//                        destination: AlarmStartTimeView(),
-//                        label: {
-//                            Text("New Alarms")
-//                        }
-//                    )
-//                }
-//            }
-//            .navigationTitle("My alarms")
-//            .navigationBarBackButtonHidden(true)
-//        }
     }
 }
 
 struct AlarmStartTimeView: View {
     var body: some View {
-        VStack {
             Text("Set wake up window start")
-            TimePickerView()
+            TimePickerView(nextContent: {AlarmEndTimeView()})
 //            OrangeButton(content: {AlarmEndTimeView()})
-        }
     }
 }
 
 struct AlarmEndTimeView: View {
     var body: some View {
         Text("Set wake up window end")
-        TimePickerView()
-        OrangeButton(content: {AlarmEndTimeView()})
+        TimePickerView(nextContent: {AlarmHome()})
+//        OrangeButton(content: {AlarmEndTimeView()})
     }
 }
 
