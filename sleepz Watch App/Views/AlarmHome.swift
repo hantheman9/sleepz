@@ -31,10 +31,14 @@ struct AlarmHome: View {
         NavigationStack {
             List {
                 ForEach(results) { item in
+                    
+                    let alarmDetails = dateFormatter(dataObject: item)
+
                     HStack {
                         NavigationLink(
-                            destination: Text(item.hour! + ":" + item.minute!),
-                            label: {Text(item.hour! + ":" + item.minute!)
+                            destination: Text(alarmDetails.startTime + " - " + alarmDetails.endTime),
+                            label: {
+                                Text(alarmDetails.startTime + " - " + alarmDetails.endTime)
                             }
                         )
                         .frame(height: 60)
@@ -58,20 +62,36 @@ struct AlarmHome: View {
             .navigationBarBackButtonHidden(true)
         }
     }
+    
+    func dateFormatter(dataObject: AlarmInfo) -> (startTime: String, endTime: String) {
+        
+        let startHourTime = "\(dataObject.startHour)"
+        let startMinuteTime = dataObject.startMinute >= 10 ? "\(dataObject.startMinute)" : "0" + "\(dataObject.startMinute)"
+
+        let endHourTime = "\(dataObject.endHour)"
+        let endMinuteTime = dataObject.endMinute >= 10 ? "\(dataObject.endMinute)" : "0" + "\(dataObject.endMinute)"
+        
+        
+        return (startHourTime + ":" + startMinuteTime, endHourTime + ":" + endMinuteTime)
+    }
 }
 
 struct AlarmStartTimeView: View {
+    @EnvironmentObject var alarmObject: AlarmInfo
+    
     var body: some View {
-            Text("Set wake up window start")
-            TimePickerView(nextContent: {AlarmEndTimeView()})
+        Text("Set wake up window start")
+        TimePickerView(nextContent: {AlarmEndTimeView()})
 //            OrangeButton(content: {AlarmEndTimeView()})
     }
 }
 
 struct AlarmEndTimeView: View {
+    @EnvironmentObject var alarmObject: AlarmInfo
+
     var body: some View {
         Text("Set wake up window end")
-        TimePickerView(nextContent: {AlarmHome()})
+        TimePickerView(nextContent: {AlarmHome()}, isStart: false)
 //        OrangeButton(content: {AlarmEndTimeView()})
     }
 }
