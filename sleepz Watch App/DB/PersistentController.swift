@@ -36,4 +36,41 @@ struct PersistentController {
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
     
+    func getAllAlarms() -> [AlarmInfo] {
+
+        let fetchRequest: NSFetchRequest<AlarmInfo> = AlarmInfo.fetchRequest()
+
+        do {
+            return try container.viewContext.fetch(fetchRequest)
+        } catch {
+            return []
+        }
+    }
+    
+    func updateAlarm(currAlarm: CurrentAlarmInfo) {
+        do {
+            try container.viewContext.save()
+        } catch {
+            container.viewContext.rollback()
+        }
+    }
+    
+    func saveAlarm(currAlarm: CurrentAlarmInfo) {
+        let alarm = AlarmInfo(context: container.viewContext)
+        
+        alarm.startHour = Int32(currAlarm.currStartHour)
+        alarm.startMinute = Int32(currAlarm.currStartMinute)
+        alarm.startMeridiem = currAlarm.currStartMeridiem
+        
+        alarm.endHour = Int32(currAlarm.currEndHour)
+        alarm.endMinute = Int32(currAlarm.currEndMinute)
+        alarm.endMeridiem = currAlarm.currEndMeridiem
+        
+        do {
+            try container.viewContext.save()
+        } catch {
+            print("Failed to save alarm \(error)")
+        }
+    }
+    
 }
