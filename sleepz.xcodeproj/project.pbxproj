@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		006DB1E4298EAE810071AED8 /* PersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DB1E3298EAE810071AED8 /* PersistentController.swift */; };
 		006DB1E5298EAE8E0071AED8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 006DB1E1298DE7820071AED8 /* Model.xcdatamodeld */; };
+		0083AE4829A17C3600F3C197 /* AlarmEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083AE4729A17C3600F3C197 /* AlarmEdit.swift */; };
 		0930A2A8298A21CB0081FC85 /* sleepz Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AC298A21CB0081FC85 /* sleepzApp.swift */; };
 		0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AE298A21CB0081FC85 /* StartView.swift */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		006DB1E2298DE7820071AED8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		006DB1E3298EAE810071AED8 /* PersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentController.swift; sourceTree = "<group>"; };
+		0083AE4729A17C3600F3C197 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
 		0930A2A1298A21CB0081FC85 /* sleepz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sleepz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sleepz Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2AC298A21CB0081FC85 /* sleepzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepzApp.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C0EBA332298C4E4B00778413 /* AlarmHome.swift */,
+				0083AE4729A17C3600F3C197 /* AlarmEdit.swift */,
 				0930A2AE298A21CB0081FC85 /* StartView.swift */,
 				0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */,
 				0930A2E2298A27920081FC85 /* ControlsView.swift */,
@@ -377,6 +380,7 @@
 				0930A2DD298A25900081FC85 /* MetricsView.swift in Sources */,
 				C0EBA333298C4E4B00778413 /* AlarmHome.swift in Sources */,
 				0930A2EB298A32340081FC85 /* AuthorizationManager.swift in Sources */,
+				0083AE4829A17C3600F3C197 /* AlarmEdit.swift in Sources */,
 				0930A2E3298A27920081FC85 /* ControlsView.swift in Sources */,
 				0930A2DB298A24AB0081FC85 /* SessionPagingView.swift in Sources */,
 			);

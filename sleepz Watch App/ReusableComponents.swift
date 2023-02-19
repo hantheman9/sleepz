@@ -75,27 +75,27 @@ struct TimePickerView: View {
         }
     }
     
-    func setUpTime() {
-        
-        if ((self.isStart) == true) {
-            currAlarmInfo.currStartHour = selectedStartHour
-            currAlarmInfo.currStartMinute = selectedStartMinute
-            currAlarmInfo.currStartMeridiem = selectedStartMeridiem
-        } else {
-            currAlarmInfo.currEndHour = selectedEndHour
-            currAlarmInfo.currEndMinute = selectedEndMinute
-            currAlarmInfo.currEndMeridiem = selectedEndMeridiem
-        }
-        do {
-            try context.save()
-            
-            // If success, close view
-//            presentation.wrappedValue.dismiss()
-            
-        } catch let err {
-            print(err.localizedDescription)
-        }
-    }
+//    func setUpTime() {
+//        
+//        if ((self.isStart) == true) {
+//            currAlarmInfo.currStartHour = selectedStartHour
+//            currAlarmInfo.currStartMinute = selectedStartMinute
+//            currAlarmInfo.currStartMeridiem = selectedStartMeridiem
+//        } else {
+//            currAlarmInfo.currEndHour = selectedEndHour
+//            currAlarmInfo.currEndMinute = selectedEndMinute
+//            currAlarmInfo.currEndMeridiem = selectedEndMeridiem
+//        }
+//        do {
+//            try context.save()
+//            
+//            // If success, close view
+////            presentation.wrappedValue.dismiss()
+//            
+//        } catch let err {
+//            print(err.localizedDescription)
+//        }
+//    }
     
 //    func selectTime() {
 //        let time = AlarmInfo(context: context)

@@ -47,7 +47,7 @@ struct PersistentController {
         }
     }
     
-    func updateAlarm(currAlarm: CurrentAlarmInfo) {
+    func updateAlarm() {
         do {
             try container.viewContext.save()
         } catch {
