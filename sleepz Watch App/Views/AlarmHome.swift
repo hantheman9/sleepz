@@ -50,19 +50,29 @@ struct AlarmHome: View {
                             }
                         )
                     }
-                }
-                NavigationLink(
-                    destination: AlarmStartTimeView(),
-                    label: {
-                        Text("New Alarms")
+                }.onDelete(perform: { indexSet in
+                    indexSet.forEach { index in
+                        let alarm = alarms[index]
+                        
+                        // delete it using Core Data Manager
+                        coreDM.deleteAlarm(alarm: alarm)
+                        populateAlarms()
                     }
-                )
-                
+                });
+                if (alarms.count < 3) {
+                    NavigationLink(
+                        destination: AlarmStartTimeView(),
+                        label: {
+                            Text("New Alarms")
+                        }
+                    )
+                }
             }
+            
             .overlay(
                 Text(alarms.isEmpty ? "No alarms set" : "")
             )
-            .navigationTitle("My alarms")
+            .navigationTitle("My alarm")
             .navigationBarBackButtonHidden(true)
         }.onAppear(perform: {
             populateAlarms()

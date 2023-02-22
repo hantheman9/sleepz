@@ -32,7 +32,10 @@ struct AlarmEditStartTimeView: View {
             OrangeButton(content: {AlarmEditEndTimeView(alarm: $alarm, currAlarmInfo: $currAlarmInfo)}, action: {})
         }.onAppear(perform: {
             setupCurrInfo()
+            print("Current start/end time:")
             print(currAlarmInfo.currStartHour)
+            print(currAlarmInfo.currEndHour)
+
         })
     }
 }
@@ -56,6 +59,9 @@ struct AlarmEditEndTimeView: View {
                 alarm.endMinute = Int32(currAlarmInfo.currEndMinute)
                 alarm.endMeridiem = currAlarmInfo.currEndMeridiem
             
+                print("Edited start/end time:")
+                print(currAlarmInfo.currStartHour)
+                print(currAlarmInfo.currEndHour)
                 
                 coreDM.updateAlarm()
             })

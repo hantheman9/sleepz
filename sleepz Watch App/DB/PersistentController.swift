@@ -73,4 +73,17 @@ struct PersistentController {
         }
     }
     
+    func deleteAlarm(alarm: AlarmInfo) {
+        
+        container.viewContext.delete(alarm)
+        
+        do {
+            try container.viewContext.save()
+        } catch {
+            container.viewContext.rollback()
+            print("Failed to save context \(error)")
+        }
+        
+    }
+    
 }
