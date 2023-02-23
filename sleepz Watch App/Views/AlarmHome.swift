@@ -18,6 +18,8 @@ import CoreData
  - days (list of strings)
 */
 
+
+
 struct AlarmHome: View {
     
 //    @StateObject var currAlarmInfo = CurrentAlarmInfo()
@@ -29,6 +31,8 @@ struct AlarmHome: View {
 //    )
 //
     @State private var alarms: [AlarmInfo] = [AlarmInfo]()
+    @State var isActive = false
+
     
     private func populateAlarms() {
         alarms = coreDM.getAllAlarms()
@@ -36,10 +40,9 @@ struct AlarmHome: View {
     
     
     var body: some View {
-        NavigationStack {
+        VStack {
             List {
                 ForEach($alarms, id: \.self) { $alarm in
-                    
                     let alarmDetails = dateFormatter(dataObject: alarm)
 
                     HStack {
@@ -49,7 +52,20 @@ struct AlarmHome: View {
                                 Text(alarmDetails.startTime + " - " + alarmDetails.endTime)
                             }
                         )
+                        Toggle(isOn: $alarm.isActive) {
+                            EmptyView()
+                        }.onChange(of: alarm.isActive){_ in
+                            print("toggle")
+                            print(alarm.isActive)
+                        }
+                        
+//                        Toggle(isOn: coreDM.toggleActive(of: $alarm)) {
+//                            EmptyView()
+//                        }
                     }
+                    .navigationTitle("My alarms")
+                    .navigationBarBackButtonHidden(true)
+                    
                 }.onDelete(perform: { indexSet in
                     indexSet.forEach { index in
                         let alarm = alarms[index]
@@ -59,38 +75,26 @@ struct AlarmHome: View {
                         populateAlarms()
                     }
                 });
-                if (alarms.count < 3) {
-                    NavigationLink(
-                        destination: AlarmStartTimeView(),
-                        label: {
-                            Text("New Alarms")
-                        }
-                    )
-                }
             }
             
             .overlay(
                 Text(alarms.isEmpty ? "No alarms set" : "")
             )
-            .navigationTitle("My alarm")
-            .navigationBarBackButtonHidden(true)
-        }.onAppear(perform: {
+        
+            if (alarms.count < 3) {
+            NavigationLink(
+                destination: AlarmStartTimeView(),
+                label: {
+                    Text("New Alarms")
+                    }
+            )
+            }
+                
+        }
+        .onAppear(perform: {
             populateAlarms()
         })
     }
-//    func currState(dataObject: AlarmInfo) -> [(Int,Int,String)] {
-//
-//        let startHourTime = Int(dataObject.startHour)
-//        let startMinuteTime = Int(dataObject.startMinute)
-//        let startMeridiemTime = dataObject.startMeridiem!
-//
-//        let endHourTime = Int(dataObject.endHour)
-//        let endMinuteTime = Int(dataObject.endMinute)
-//        let endMeridiemTime = dataObject.endMeridiem!
-//
-//
-//        return [(startHourTime, startMinuteTime, startMeridiemTime), (endHourTime, endMinuteTime, endMeridiemTime)]
-//    }
     
     func dateFormatter(dataObject: AlarmInfo) -> (startTime: String, endTime: String) {
         
@@ -103,6 +107,7 @@ struct AlarmHome: View {
         
         return (startHourTime + ":" + startMinuteTime, endHourTime + ":" + endMinuteTime)
     }
+    
 }
 
 final class CurrentAlarmInfo: ObservableObject {

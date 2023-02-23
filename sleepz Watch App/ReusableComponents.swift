@@ -27,7 +27,7 @@ struct TimePickerView: View {
 
 //    var nextContent: () -> Content
     var isStart: Bool = true
-    
+        
     var hour = 1...12
     var minute = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
     var meridiem = ["am","pm"]

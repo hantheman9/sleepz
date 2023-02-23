@@ -63,7 +63,11 @@ struct AlarmEditEndTimeView: View {
                 print(currAlarmInfo.currStartHour)
                 print(currAlarmInfo.currEndHour)
                 
+                print(alarm.startHour)
+                print(alarm.endHour)
+                
                 coreDM.updateAlarm()
+                
             })
         }
 //        OrangeButton(content: {AlarmEndTimeView()})

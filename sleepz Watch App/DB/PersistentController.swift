@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 struct PersistentController {
     static let shared = PersistentController()
@@ -50,7 +51,9 @@ struct PersistentController {
     func updateAlarm() {
         do {
             try container.viewContext.save()
+            print("did save")
         } catch {
+            print("didn't save")
             container.viewContext.rollback()
         }
     }
@@ -85,5 +88,19 @@ struct PersistentController {
         }
         
     }
+    
+//    func toggleActive(of alarm: AlarmInfo) -> Binding<Bool> {
+//
+//        updateAlarm()
+//
+//            let binding = Binding<Bool>(get: { () -> Bool in
+//                return alarm.isActive != nil
+//
+//            }) { (newValue) in
+//                // save to database
+//                toggleActive(of: alarm)
+//            }
+//            return binding
+//        }
     
 }
