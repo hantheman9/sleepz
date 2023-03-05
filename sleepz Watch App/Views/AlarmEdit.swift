@@ -13,6 +13,8 @@ import CoreData
 struct AlarmEditStartTimeView: View {
 
     @Binding var alarm: AlarmInfo
+    var alarmId: NSManagedObjectID
+
     @State var currAlarmInfo = CurrentAlarmInfo()
     
     func setupCurrInfo() {
@@ -29,7 +31,7 @@ struct AlarmEditStartTimeView: View {
         VStack {
             Text("Set wake up window end")
             TimePickerView(currAlarmInfo: $currAlarmInfo, isStart: true)
-            OrangeButton(content: {AlarmEditEndTimeView(alarm: $alarm, currAlarmInfo: $currAlarmInfo)}, action: {})
+            OrangeButton(content: {AlarmEditEndTimeView(alarm: $alarm, alarmId: alarmId, currAlarmInfo: $currAlarmInfo)}, action: {})
         }.onAppear(perform: {
             setupCurrInfo()
             print("Current start/end time:")
@@ -42,6 +44,7 @@ struct AlarmEditStartTimeView: View {
 
 struct AlarmEditEndTimeView: View {
     @Binding var alarm: AlarmInfo
+    var alarmId: NSManagedObjectID
     @Binding var currAlarmInfo: CurrentAlarmInfo
     let coreDM = PersistentController()
     
@@ -51,23 +54,7 @@ struct AlarmEditEndTimeView: View {
             Text("Set wake up window end")
             TimePickerView(currAlarmInfo: $currAlarmInfo, isStart: false)
             OrangeButton(content: {AlarmHome(coreDM: coreDM)}, action: {
-                alarm.startHour = Int32(currAlarmInfo.currStartHour)
-                alarm.startMinute = Int32(currAlarmInfo.currStartMinute)
-                alarm.startMeridiem = currAlarmInfo.currStartMeridiem
-                
-                alarm.endHour = Int32(currAlarmInfo.currEndHour)
-                alarm.endMinute = Int32(currAlarmInfo.currEndMinute)
-                alarm.endMeridiem = currAlarmInfo.currEndMeridiem
-            
-                print("Edited start/end time:")
-                print(currAlarmInfo.currStartHour)
-                print(currAlarmInfo.currEndHour)
-                
-                print(alarm.startHour)
-                print(alarm.endHour)
-                
-                coreDM.updateAlarm()
-                
+                coreDM.updateAlarm(alarmId: alarmId, alarmInfo: currAlarmInfo)
             })
         }
 //        OrangeButton(content: {AlarmEndTimeView()})

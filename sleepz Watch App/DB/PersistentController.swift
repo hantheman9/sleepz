@@ -48,13 +48,42 @@ struct PersistentController {
         }
     }
     
-    func updateAlarm() {
+    func getAlarm(alarmId: NSManagedObjectID) -> NSManagedObject {
+        var alarmObject: NSManagedObject = NSManagedObject()
         do {
+            alarmObject = try container.viewContext.existingObject(with: alarmId);
+        } catch {
+            print("could not fetch alarm with id" + alarmId.uriRepresentation().absoluteString)
+        }
+        return alarmObject
+    }
+    
+    func updateAlarm(alarmId: NSManagedObjectID, alarmInfo: CurrentAlarmInfo) {
+        do {
+            let alarmObject = getAlarm(alarmId: alarmId);
+            alarmObject.setValue(Int32(alarmInfo.currStartHour), forKey: "startHour");
+            alarmObject.setValue(Int32(alarmInfo.currStartMinute), forKey: "startMinute");
+            alarmObject.setValue(alarmInfo.currStartMeridiem, forKey: "startMeridiem");
+            
+            alarmObject.setValue(Int32(alarmInfo.currEndHour), forKey: "endHour");
+            alarmObject.setValue(Int32(alarmInfo.currEndMinute), forKey: "endMinute");
+            alarmObject.setValue(alarmInfo.currEndMeridiem, forKey: "endMeridiem");
+            
+            alarmObject.setValue(true, forKey: "isActive");
+            
             try container.viewContext.save()
             print("did save")
         } catch {
             print("didn't save")
             container.viewContext.rollback()
+        }
+    }
+    
+    func save() {
+        do {
+            try container.viewContext.save()
+        } catch {
+            print("Failed to save alarm \(error)")
         }
     }
     
@@ -68,6 +97,7 @@ struct PersistentController {
         alarm.endHour = Int32(currAlarm.currEndHour)
         alarm.endMinute = Int32(currAlarm.currEndMinute)
         alarm.endMeridiem = currAlarm.currEndMeridiem
+        alarm.isActive = true
         
         do {
             try container.viewContext.save()

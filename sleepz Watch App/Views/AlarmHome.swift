@@ -31,8 +31,6 @@ struct AlarmHome: View {
 //    )
 //
     @State private var alarms: [AlarmInfo] = [AlarmInfo]()
-    @State var isActive = false
-
     
     private func populateAlarms() {
         alarms = coreDM.getAllAlarms()
@@ -40,23 +38,36 @@ struct AlarmHome: View {
     
     
     var body: some View {
-        VStack {
+        VStack{
             List {
                 ForEach($alarms, id: \.self) { $alarm in
-                    let alarmDetails = dateFormatter(dataObject: alarm)
+                    let formattedAlarm = dateFormatter(dataObject: alarm)
+                    let formattedTimeDif = timeDifCalc(dataObject: alarm)
+                    let alarmId = alarm.objectID
+                    
+                    let alarmObject = coreDM.getAlarm(alarmId: alarmId)
+                    let alarmBinding = Binding(
+                        get: { alarmObject.value(forKey: "isActive") as! Bool },
+                        set: {
+                            alarmObject.setValue($0, forKey: "isActive")
+                            
+                            coreDM.save()
+                            populateAlarms()
+                        }
+                    )
 
                     HStack {
                         NavigationLink(
-                            destination: AlarmEditStartTimeView(alarm: $alarm),
+                            destination: AlarmEditStartTimeView(alarm: $alarm, alarmId: alarmId),
                             label: {
-                                Text(alarmDetails.startTime + " - " + alarmDetails.endTime)
+                                VStack(spacing: 4) {
+                                    Text(formattedAlarm.startTime + " - " + formattedAlarm.endTime).frame(width: 120, alignment: .leading)
+                                    Text(formattedTimeDif + " min window").frame(width: 120, alignment: .leading).opacity(0.4).font(.system(size: 14))
+                                }
                             }
                         )
-                        Toggle(isOn: $alarm.isActive) {
+                        Toggle(isOn: alarmBinding) {
                             EmptyView()
-                        }.onChange(of: alarm.isActive){_ in
-                            print("toggle")
-                            print(alarm.isActive)
                         }
                         
 //                        Toggle(isOn: coreDM.toggleActive(of: $alarm)) {
@@ -83,7 +94,7 @@ struct AlarmHome: View {
         
             if (alarms.count < 3) {
             NavigationLink(
-                destination: AlarmStartTimeView(),
+                destination: AlarmCreate(),
                 label: {
                     Text("New Alarms")
                     }
@@ -100,12 +111,29 @@ struct AlarmHome: View {
         
         let startHourTime = "\(dataObject.startHour)"
         let startMinuteTime = dataObject.startMinute >= 10 ? "\(dataObject.startMinute)" : "0" + "\(dataObject.startMinute)"
+        let startMeridiem = dataObject.startMeridiem ?? ""
 
         let endHourTime = "\(dataObject.endHour)"
         let endMinuteTime = dataObject.endMinute >= 10 ? "\(dataObject.endMinute)" : "0" + "\(dataObject.endMinute)"
+        let endMeridiem = dataObject.endMeridiem ?? ""
+
         
+        return (startHourTime + ":" + startMinuteTime, endHourTime + ":" + endMinuteTime + endMeridiem)
+    }
+    
+    func timeDifCalc(dataObject: AlarmInfo) -> String {
         
-        return (startHourTime + ":" + startMinuteTime, endHourTime + ":" + endMinuteTime)
+        var startMin = dataObject.startHour * 60 + dataObject.startMinute
+        var endMin = dataObject.endHour * 60 + dataObject.endMinute
+
+        if (dataObject.startMeridiem == "pm") {
+            startMin += 12 * 60
+            endMin += 12 * 60
+        }
+        
+        let minuteDif = endMin - startMin
+
+        return ("\(minuteDif)")
     }
     
 }
@@ -113,38 +141,11 @@ struct AlarmHome: View {
 final class CurrentAlarmInfo: ObservableObject {
     @Published var currStartHour: Int = 0
     @Published var currStartMinute: Int = 0
-    @Published var currStartMeridiem: String = ""
+    @Published var currStartMeridiem: String = "am"
 
     @Published var currEndHour: Int = 0
     @Published var currEndMinute: Int = 0
-    @Published var currEndMeridiem: String = ""
-}
-
-struct AlarmStartTimeView: View {
-    @State var currAlarmInfo = CurrentAlarmInfo()
-    
-    var body: some View {
-        VStack{
-            Text("Set wake up window end")
-            TimePickerView(currAlarmInfo: $currAlarmInfo, isStart: true)
-            OrangeButton(content: {AlarmEndTimeView(currAlarmInfo: $currAlarmInfo)}, action: {})
-        }
-//        OrangeButton(content: {AlarmEndTimeView()})
-    }
-}
-
-struct AlarmEndTimeView: View {
-    @Binding var currAlarmInfo: CurrentAlarmInfo
-    let coreDM = PersistentController()
-    
-    var body: some View {
-        Text("Set wake up window end")
-        TimePickerView(currAlarmInfo: $currAlarmInfo, isStart: false)
-        OrangeButton(content: {AlarmHome(coreDM: coreDM)}, action: {
-            coreDM.saveAlarm(currAlarm: currAlarmInfo)
-        })
-//        OrangeButton(content: {AlarmEndTimeView()})
-    }
+    @Published var currEndMeridiem: String = "am"
 }
 
 //struct AlarmDayView: View {

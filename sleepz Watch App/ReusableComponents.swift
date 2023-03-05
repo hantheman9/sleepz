@@ -16,11 +16,11 @@ struct TimePickerView: View {
     // Set these as existing alarm info if exists
     @State var selectedStartHour = 1
     @State var selectedStartMinute = 0
-    @State var selectedStartMeridiem = ""
+    @State var selectedStartMeridiem = "am"
     
     @State var selectedEndHour = 1
     @State var selectedEndMinute = 0
-    @State var selectedEndMeridiem = ""
+    @State var selectedEndMeridiem = "am"
     
     @Binding var currAlarmInfo : CurrentAlarmInfo
 //    @Binding var existingAlarmInfo : AlarmInfo

@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00680A7729B4139B0005C38C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00680A7629B4139B0005C38C /* OnboardingView.swift */; };
 		006DB1E4298EAE810071AED8 /* PersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DB1E3298EAE810071AED8 /* PersistentController.swift */; };
 		006DB1E5298EAE8E0071AED8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 006DB1E1298DE7820071AED8 /* Model.xcdatamodeld */; };
 		0083AE4829A17C3600F3C197 /* AlarmEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083AE4729A17C3600F3C197 /* AlarmEdit.swift */; };
 		0083AE4D29A6E23C00F3C197 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083AE4C29A6E23C00F3C197 /* Scheduler.swift */; };
 		0083AE4F29A6E87500F3C197 /* DateTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083AE4E29A6E87500F3C197 /* DateTesting.swift */; };
+		00875FFD29B1B2EF00082A68 /* AlarmCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00875FFC29B1B2EF00082A68 /* AlarmCreate.swift */; };
 		0930A2A8298A21CB0081FC85 /* sleepz Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AC298A21CB0081FC85 /* sleepzApp.swift */; };
 		0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AE298A21CB0081FC85 /* StartView.swift */; };
@@ -72,11 +74,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00680A7629B4139B0005C38C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		006DB1E2298DE7820071AED8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		006DB1E3298EAE810071AED8 /* PersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentController.swift; sourceTree = "<group>"; };
 		0083AE4729A17C3600F3C197 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
 		0083AE4C29A6E23C00F3C197 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		0083AE4E29A6E87500F3C197 /* DateTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTesting.swift; sourceTree = "<group>"; };
+		00875FFC29B1B2EF00082A68 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
 		0930A2A1298A21CB0081FC85 /* sleepz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sleepz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sleepz Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2AC298A21CB0081FC85 /* sleepzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepzApp.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */,
 				0930A2E2298A27920081FC85 /* ControlsView.swift */,
 				0930A2DC298A25900081FC85 /* MetricsView.swift */,
+				00875FFC29B1B2EF00082A68 /* AlarmCreate.swift */,
+				00680A7629B4139B0005C38C /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,10 +388,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */,
+				00680A7729B4139B0005C38C /* OnboardingView.swift in Sources */,
 				0930A2E9298A320E0081FC85 /* HeartRate.swift in Sources */,
 				006DB1E5298EAE8E0071AED8 /* Model.xcdatamodeld in Sources */,
 				C0EBA335298C4E5900778413 /* ReusableComponents.swift in Sources */,
 				0930A2E5298A2E0E0081FC85 /* WorkoutManager.swift in Sources */,
+				00875FFD29B1B2EF00082A68 /* AlarmCreate.swift in Sources */,
 				0930A2ED298A32B50081FC85 /* HKUnit.swift in Sources */,
 				0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */,
 				0930A2E1298A26860081FC85 /* ElapsedTimeView.swift in Sources */,
