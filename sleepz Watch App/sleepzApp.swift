@@ -9,13 +9,16 @@ import SwiftUI
 
 @main
 struct sleepz_Watch_AppApp: App {
+    @WKExtensionDelegateAdaptor private var extensionDelegate: ExtensionDelegate
+
     
 //    @StateObject var workoutManager = WorkoutManager()
     
     @SceneBuilder var body: some Scene {
         WindowGroup{
             NavigationView {
-                StartView()
+                //StartView()
+                HapticsView()
             }
            
         }

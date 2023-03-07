@@ -24,6 +24,8 @@
 		0930A2E9298A320E0081FC85 /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2E8298A320E0081FC85 /* HeartRate.swift */; };
 		0930A2EB298A32340081FC85 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2EA298A32340081FC85 /* AuthorizationManager.swift */; };
 		0930A2ED298A32B50081FC85 /* HKUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2EC298A32B50081FC85 /* HKUnit.swift */; };
+		C04EE62F29B7A1C80083BAD6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04EE62E29B7A1C80083BAD6 /* ExtensionDelegate.swift */; };
+		C04EE63129B7A2A60083BAD6 /* HapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04EE63029B7A2A60083BAD6 /* HapticsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,9 @@
 		0930A2E8298A320E0081FC85 /* HeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
 		0930A2EA298A32340081FC85 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		0930A2EC298A32B50081FC85 /* HKUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKUnit.swift; sourceTree = "<group>"; };
+		C04EE62D29B7A10D0083BAD6 /* sleepz-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "sleepz-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C04EE62E29B7A1C80083BAD6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C04EE63029B7A2A60083BAD6 /* HapticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,9 +141,12 @@
 		0930A2AB298A21CB0081FC85 /* sleepz Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				C04EE62D29B7A10D0083BAD6 /* sleepz-Watch-App-Info.plist */,
 				0930A2AC298A21CB0081FC85 /* sleepzApp.swift */,
+				C04EE63029B7A2A60083BAD6 /* HapticsView.swift */,
 				0930A2AE298A21CB0081FC85 /* StartView.swift */,
 				0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */,
+				C04EE62E29B7A1C80083BAD6 /* ExtensionDelegate.swift */,
 				0930A2E2298A27920081FC85 /* ControlsView.swift */,
 				0930A2DC298A25900081FC85 /* MetricsView.swift */,
 				0930A2E4298A2E0E0081FC85 /* WorkoutManager.swift */,
@@ -338,6 +346,8 @@
 			files = (
 				0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */,
 				0930A2E9298A320E0081FC85 /* HeartRate.swift in Sources */,
+				C04EE62F29B7A1C80083BAD6 /* ExtensionDelegate.swift in Sources */,
+				C04EE63129B7A2A60083BAD6 /* HapticsView.swift in Sources */,
 				0930A2E5298A2E0E0081FC85 /* WorkoutManager.swift in Sources */,
 				0930A2ED298A32B50081FC85 /* HKUnit.swift in Sources */,
 				0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */,
@@ -505,9 +515,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sleepz Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = A39XX4FDCK;
+				DEVELOPMENT_TEAM = FDP93TX79W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sleepz-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = sleepz;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -535,9 +546,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sleepz Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = A39XX4FDCK;
+				DEVELOPMENT_TEAM = FDP93TX79W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sleepz-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = sleepz;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
