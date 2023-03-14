@@ -2,10 +2,10 @@ import numpy as np
 from scipy import signal
 import pandas as pd
 
-""" 
+"""
     Processing script to convert triaxial accelerometer data to activity count.
 
-    Input file requirements: .csv; has "seconds_elapsed", "x", "y", "z" columns; is for a 30 second accelerometer reading
+    Input file requirements: .csv; has "seconds_elapsed", "x", "y", "z" columns; is for a single reading
     Use process_data() to run script.
 """
 
@@ -13,7 +13,7 @@ import pandas as pd
 ACTIVITY_THRESHOLD = 0.012582513966618908
 
 """
-    magnitude() calculates magnitude of acceleration for each data point
+    magnitude() calculates magnitude of acceleration
 
     :param data: Dataframe with seconds_elapsed, x, y, z axis
     :return: Dataframe with column "signal_magnitude" added
@@ -21,6 +21,8 @@ ACTIVITY_THRESHOLD = 0.012582513966618908
 
 
 def magnitude(data):
+    print("Calculating magnitude")
+
     acc = data[["x", "y", "z"]]
 
     return data.assign(magnitude=np.sqrt(np.sum(np.square(acc), axis=1)))
@@ -36,6 +38,8 @@ def magnitude(data):
 
 
 def filter(data, sampling_frequency: int):
+    print("Filtering signal")
+
     raw = data[["magnitude"]]
 
     # Define the filter parameters
@@ -52,32 +56,28 @@ def filter(data, sampling_frequency: int):
         filter_order, [normalized_lowcut, normalized_highcut], btype='bandpass')
 
     # Apply the filter to the data
-    filtered = abs(signal.filtfilt(b, a, raw, axis=0))
+    filtered = abs(signal.filtfilt(b, a, raw, padlen=0))
 
     return data.assign(filtered_signal=filtered)
 
 
-""" 
-    get_counts() generates the count number for given data
+"""
+    get_movement() calculates if the given data indicates user movement
 
     :param data: Dataframe with seconds_elapsed, filtered_signal
     :return: integer count value
 
     NOTE: this code assumes that the passed in data was for a 30sec sample.
-    Ask Carman if you want the code that takes in a whole file and calculates activity counts for each 30 second chunk.
 """
 
 
-def get_counts(data):
-    count = 0
-    data_arr = data.to_numpy()
+def get_movement(data):
 
-    for sample in data_arr:
-        if sample[1] >= ACTIVITY_THRESHOLD:
-            # simple count for now, as we are only concerned with distinguishing between no movement and any movement; a higher count value means more movement in a given 30 sec window
-            count += 1
+    data = np.ndarray.flatten(data.to_numpy())
+    if data > ACTIVITY_THRESHOLD:
+        return True
 
-    return count
+    return False
 
 
 """
@@ -103,7 +103,12 @@ def process_data(filename=str, fs=int):
     # pass magnitude through filter
     data = filter(data, fs)
 
-    # get activity counts
-    counts = get_counts(data)
+    final = data[["filtered_signal"]]
 
-    return counts
+    # get binary movement value
+    is_moving = get_movement(final)
+
+    return is_moving
+
+
+print(process_data("Accelerometer.csv", 50))
