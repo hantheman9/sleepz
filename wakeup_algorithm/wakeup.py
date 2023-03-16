@@ -6,8 +6,13 @@ import pickle
     Script to determine if a user should be woken up.
 
     Instructions:
-    1. call init() once
+    1. call init() once before the next step
     2. call get_should_wake_user() every time you want to check if a user should be woken up. See the method on more details on inputs.
+        This function should be called the first time with the return value from init(), then subsequent times with its own return value. example below:
+
+        data = init()
+        should_wake_user, REM_flag = get_should_wake_user(is_REM, accelerometer_data, alarm_end, data) # first call
+        should_wake_user, REM_flag = get_should_wake_user(is_REM, accelerometer_data, alarm_end, REM_flag) # subsequent calls
 """
 
 """ 
