@@ -43,17 +43,15 @@ def filter(data, sampling_frequency: int):
     raw = data[["magnitude"]]
 
     # Define the filter parameters
-    lowcut = 0.25  # Hz
-    highcut = 2.5  # Hz
+    highcut = 3.5  # Hz
     filter_order = 6
 
     # Create the filter coefficients
     nyquist_frequency = 0.5 * sampling_frequency
-    normalized_lowcut = lowcut / nyquist_frequency
     normalized_highcut = highcut / nyquist_frequency
 
     b, a = signal.butter(
-        filter_order, [normalized_lowcut, normalized_highcut], btype='bandpass')
+        filter_order, [normalized_highcut], btype='lowpass')
 
     # Apply the filter to the data
     filtered = abs(signal.filtfilt(b, a, raw, padlen=0))
