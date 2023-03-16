@@ -79,7 +79,7 @@ def get_movement(data):
 
 
 """
-    process_data() takes in the csv file and completes all necessary processing to output activity count
+    get_user_movement() takes in the csv file and completes all necessary processing to output activity count
 
     :param filename: string of the file name, e.g. "Accelerometer.csv", with columns "seconds_elapsed", "x", "y", "z"
     :param fs: integer representing sampling frequency
@@ -87,7 +87,7 @@ def get_movement(data):
 """
 
 
-def process_data(filename=str, fs=int):
+def get_user_movement(filename=str, fs=int):
 
     # read full file
     acc = pd.read_csv(filename)
@@ -108,5 +108,3 @@ def process_data(filename=str, fs=int):
 
     return is_moving
 
-
-print(process_data("Accelerometer.csv", 50))
