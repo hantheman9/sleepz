@@ -54,7 +54,8 @@ def get_should_wake_user(is_REM: bool, accelerometer_data:dict, alarm_end:dateti
     if (get_time_left(alarm_end)): return True, REM_flag
 
     # get accelerometer data organized
-    (acc_filename, fs) = next(iter(accelerometer_data.items()))
+    acc_filename = accelerometer_data["filename"]
+    fs = accelerometer_data["sampling_freq"]
 
     # user is in REM
     if (is_REM):

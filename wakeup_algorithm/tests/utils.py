@@ -1,3 +1,5 @@
+import csv
+
 def create_mock_csv(filename, data):
     # Open a new file in write mode
     with open(filename, mode='w', newline='') as csv_file:
