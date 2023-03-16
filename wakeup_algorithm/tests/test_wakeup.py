@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 sys.path.insert(0, os.path.abspath('..'))
 
-from wakeup import get_should_wake_user
+from wakeup import get_should_wake_user, init
 
 # Dummy accelerometer dict - values don't matter as this won't be read anyways
 acc_dict = {
@@ -15,21 +15,24 @@ acc_dict = {
 }
 
 # REM flags
-user_in_REM_none = None
-user_in_REM_true = True
-
-REM_flag_none = pickle.dumps(user_in_REM_none)
-REM_flag_true = pickle.dumps(user_in_REM_true)
+REM_flag_none = init(None)
+REM_flag_true = init(True)
 
 # Sample data to write to the mock CSV file
 acc_no_movement_data = [
     ["seconds_elapsed", "x", "y", "z"],
-    ["1677476699445029400","0","0","0","0"]
+    ["1677476699445029400","0","0","0","0"],
+    ["1677476699445029401","0","0","0","0"],
+    ["1677476699445029402","0","0","0","0"],
+    ["1677476699445029403","0","0","0","0"],
 ]
 
 acc_movement_data = [
     ["seconds_elapsed", "x", "y", "z"],
-    ["1677476699445029400","2","2","2","2"]
+    ["1677476699445029400","2","2","2","2"],
+    ["1677476699445029401","3","3","3","3"],
+    ["1677476699445029402","1","1","1","1"],
+    ["1677476699445029403","4","4","4","4"],
 ]
 
 create_mock_csv("no_movement.csv", acc_no_movement_data)

@@ -5,7 +5,7 @@ import pandas as pd
 """
     Processing script to convert triaxial accelerometer data to activity count.
 
-    Input file requirements: .csv; has "seconds_elapsed", "x", "y", "z" columns; is for a single reading
+    Input file requirements: .csv; has "seconds_elapsed", "x", "y", "z" columns
     Use process_data() to run script.
 """
 
@@ -70,8 +70,8 @@ def filter(data, sampling_frequency: int):
 
 
 def get_movement(data):
-
-    data = np.ndarray.flatten(data.to_numpy())
+    # takes average of all given samples after filtering. no matter how many samples are passed in, they are reduced to one sample here
+    data = np.average(np.ndarray.flatten(data.to_numpy()))
     if data > ACTIVITY_THRESHOLD:
         return True
 

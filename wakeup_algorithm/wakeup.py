@@ -1,20 +1,24 @@
 from accelerometer_processing import get_user_movement
 from datetime import datetime
 import pickle
-import numpy as np
+
+"""
+    Script to determine if a user should be woken up.
+
+    Instructions:
+    1. call init() once
+    2. call get_should_wake_user() every time you want to check if a user should be woken up. See the method on more details on inputs.
+"""
+
 """ 
     init() initializes the REM flag and serializes it for future runs of the main function.
     This should be called first before the main function.
-"""
-def init():
-    # initialize flag value
-    user_in_REM = None
-    
-    # pickle the flag
-    data = pickle.dumps(user_in_REM)
 
-    # return pickled value
-    return data
+    :param user_in_REM: is the REM flag; defaults to None - this parameter should only be passed in for testing purposes
+"""
+def init(user_in_REM=None):
+    return pickle.dumps(user_in_REM)
+
 
 """ 
     get_time_left() checks if there is less than or equal to 1 minute left in the alarm window.
@@ -35,8 +39,8 @@ def get_time_left(alarm_end: datetime.time):
     :param is_REM: boolean value indicating if user's current sleep stage is REM or not
     :param accelerometer_data: dictionary storing the following information:
         dict = {
-            "filename": "Accelerometer.csv", # string
-            "sampling_freq": 20 # integer
+            "filename": "Accelerometer.csv", # string, MUST BE .CSV FILE! expected columns are "seconds_elapsed", "x", "y", "z"
+            "sampling_freq": 20 # integer, frequency at which the data was sampled.
         }
     :param alarm_end: datetime time value indicating when the alarm window ends
     :param REM_flag: pickled value in bytes of the REM flag
