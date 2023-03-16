@@ -10,7 +10,7 @@ import pandas as pd
 """
 
 # CONSTANT - represents zero-activity offset value
-ACTIVITY_THRESHOLD = 0.012582513966618908
+ACTIVITY_THRESHOLD = 0.039441065848913645
 
 """
     magnitude() calculates magnitude of acceleration
