@@ -14,7 +14,6 @@
 		0083AE4D29A6E23C00F3C197 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083AE4C29A6E23C00F3C197 /* Scheduler.swift */; };
 		0083AE4F29A6E87500F3C197 /* DateTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083AE4E29A6E87500F3C197 /* DateTesting.swift */; };
 		00875FFD29B1B2EF00082A68 /* AlarmCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00875FFC29B1B2EF00082A68 /* AlarmCreate.swift */; };
-		0930A2A8298A21CB0081FC85 /* sleepz Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AC298A21CB0081FC85 /* sleepzApp.swift */; };
 		0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AE298A21CB0081FC85 /* StartView.swift */; };
 		0930A2B1298A21CE0081FC85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0930A2B0298A21CE0081FC85 /* Assets.xcassets */; };
@@ -36,13 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0930A2A9298A21CB0081FC85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0930A29B298A21CB0081FC85 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0930A2A6298A21CB0081FC85;
-			remoteInfo = "sleepz Watch App";
-		};
 		0930A2BA298A21CE0081FC85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0930A29B298A21CB0081FC85 /* Project object */;
@@ -59,29 +51,16 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		0930A2D0298A21CE0081FC85 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				0930A2A8298A21CB0081FC85 /* sleepz Watch App.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		00680A7629B4139B0005C38C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		00680A7829B418750005C38C /* sleepz Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sleepz Watch App.entitlements"; sourceTree = "<group>"; };
+		00680A7929B41D0E0005C38C /* sleepz-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "sleepz-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		006DB1E2298DE7820071AED8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		006DB1E3298EAE810071AED8 /* PersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentController.swift; sourceTree = "<group>"; };
 		0083AE4729A17C3600F3C197 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
 		0083AE4C29A6E23C00F3C197 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		0083AE4E29A6E87500F3C197 /* DateTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTesting.swift; sourceTree = "<group>"; };
 		00875FFC29B1B2EF00082A68 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
-		0930A2A1298A21CB0081FC85 /* sleepz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sleepz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sleepz Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2AC298A21CB0081FC85 /* sleepzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepzApp.swift; sourceTree = "<group>"; };
 		0930A2AE298A21CB0081FC85 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -175,7 +154,6 @@
 		0930A2A2298A21CB0081FC85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0930A2A1298A21CB0081FC85 /* sleepz.app */,
 				0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */,
 				0930A2B9298A21CE0081FC85 /* sleepz Watch AppTests.xctest */,
 				0930A2C3298A21CE0081FC85 /* sleepz Watch AppUITests.xctest */,
@@ -186,6 +164,8 @@
 		0930A2AB298A21CB0081FC85 /* sleepz Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				00680A7929B41D0E0005C38C /* sleepz-Watch-App-Info.plist */,
+				00680A7829B418750005C38C /* sleepz Watch App.entitlements */,
 				0083AE4929A6D96400F3C197 /* Controllers */,
 				006DB1E9298ECBEB0071AED8 /* Views */,
 				006DB1E6298EAF2F0071AED8 /* DB */,
@@ -232,23 +212,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0930A2A0298A21CB0081FC85 /* sleepz */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0930A2D1298A21CE0081FC85 /* Build configuration list for PBXNativeTarget "sleepz" */;
-			buildPhases = (
-				0930A29F298A21CB0081FC85 /* Resources */,
-				0930A2D0298A21CE0081FC85 /* Embed Watch Content */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0930A2AA298A21CB0081FC85 /* PBXTargetDependency */,
-			);
-			name = sleepz;
-			productName = sleepz;
-			productReference = 0930A2A1298A21CB0081FC85 /* sleepz.app */;
-			productType = "com.apple.product-type.application.watchapp2-container";
-		};
 		0930A2A6298A21CB0081FC85 /* sleepz Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0930A2CD298A21CE0081FC85 /* Build configuration list for PBXNativeTarget "sleepz Watch App" */;
@@ -312,9 +275,6 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					0930A2A0298A21CB0081FC85 = {
-						CreatedOnToolsVersion = 14.2;
-					};
 					0930A2A6298A21CB0081FC85 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -341,7 +301,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0930A2A0298A21CB0081FC85 /* sleepz */,
 				0930A2A6298A21CB0081FC85 /* sleepz Watch App */,
 				0930A2B8298A21CE0081FC85 /* sleepz Watch AppTests */,
 				0930A2C2298A21CE0081FC85 /* sleepz Watch AppUITests */,
@@ -350,13 +309,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0930A29F298A21CB0081FC85 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0930A2A5298A21CB0081FC85 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,11 +382,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0930A2AA298A21CB0081FC85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0930A2A6298A21CB0081FC85 /* sleepz Watch App */;
-			targetProxy = 0930A2A9298A21CB0081FC85 /* PBXContainerItemProxy */;
-		};
 		0930A2BB298A21CE0081FC85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0930A2A6298A21CB0081FC85 /* sleepz Watch App */;
@@ -562,13 +509,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "sleepz Watch App/sleepz Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sleepz Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = A39XX4FDCK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sleepz-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = sleepz;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This application needs permission for health reasons.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This application needs permission for health reasons.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This application needs permission for health reasons.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -592,13 +545,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "sleepz Watch App/sleepz Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sleepz Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = A39XX4FDCK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sleepz-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = sleepz;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This application needs permission for health reasons.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This application needs permission for health reasons.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This application needs permission for health reasons.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -615,39 +574,6 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 9.1;
-			};
-			name = Release;
-		};
-		0930A2D2298A21CE0081FC85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A39XX4FDCK;
-				INFOPLIST_KEY_CFBundleDisplayName = sleepz;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = burhan.sleepz;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		0930A2D3298A21CE0081FC85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A39XX4FDCK;
-				INFOPLIST_KEY_CFBundleDisplayName = sleepz;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = burhan.sleepz;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -752,15 +678,6 @@
 			buildConfigurations = (
 				0930A2CE298A21CE0081FC85 /* Debug */,
 				0930A2CF298A21CE0081FC85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0930A2D1298A21CE0081FC85 /* Build configuration list for PBXNativeTarget "sleepz" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0930A2D2298A21CE0081FC85 /* Debug */,
-				0930A2D3298A21CE0081FC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

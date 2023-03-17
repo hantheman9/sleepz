@@ -26,8 +26,40 @@ final class sleepz_Watch_AppUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let welcomeText = app.staticTexts["Welcome to Sleepz"]
+        XCTAssert(welcomeText.exists)
+        
+        let nextButton = app.buttons["nextButton"]
+        XCTAssert(nextButton.exists)
+        
+        nextButton.tap()
+        
+        let createAlarmButton = app.buttons["createAlarmButton"]
+        XCTAssert(createAlarmButton.exists)
+        
+        createAlarmButton.tap()
+        
+        let setStartTimeText = app.staticTexts["Set wake up window start"]
+        XCTAssert(setStartTimeText.exists)
+        
+        let selectEndTimeButton = app.buttons["setAlarmEnd"]
+        XCTAssert(selectEndTimeButton.exists)
+        
+        selectEndTimeButton.tap()
+        
+        let setEndTimeText = app.staticTexts["Set wake up window end"]
+        XCTAssert(setEndTimeText.exists)
+        
+        let alarmCreationButton = app.buttons["finishCreationButton"]
+        XCTAssert(alarmCreationButton.exists)
+        
+        alarmCreationButton.tap()
+        
+        let alarmWindowTime = app.staticTexts["1:00 - 1:00am"]
+        let alarmWindowLengthTime = app.staticTexts["0 min window"]
+        XCTAssert(alarmWindowTime.exists)
+        XCTAssert(alarmWindowLengthTime.exists)
     }
 
     func testLaunchPerformance() throws {

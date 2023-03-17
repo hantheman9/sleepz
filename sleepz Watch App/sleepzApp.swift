@@ -17,7 +17,7 @@ struct sleepz_Watch_AppApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup{
             NavigationView {
-                AlarmHome(coreDM: PersistentController())
+                OnboardingView()
             }
             .environment(\.managedObjectContext, container.viewContext)
         }

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CoreData
+import HealthKit
 
 /***
  For alarmList,
@@ -21,15 +22,8 @@ import CoreData
 
 
 struct AlarmHome: View {
-    
-//    @StateObject var currAlarmInfo = CurrentAlarmInfo()
     let coreDM: PersistentController
     
-//    @FetchRequest (
-//        entity: AlarmInfo.entity(),
-//        sortDescriptors: [NSSortDescriptor(keyPath: \AlarmInfo.dateAdded, ascending: false)]
-//    )
-//
     @State private var alarms: [AlarmInfo] = [AlarmInfo]()
     
     private func populateAlarms() {
@@ -93,18 +87,19 @@ struct AlarmHome: View {
             )
         
             if (alarms.count < 3) {
-            NavigationLink(
-                destination: AlarmCreate(),
-                label: {
-                    Text("New Alarms")
-                    }
-            )
+                NavigationLink(
+                    destination: AlarmCreate(),
+                    label: {
+                        Text("New Alarms")
+                        }
+                ).accessibilityIdentifier("createAlarmButton")
             }
                 
         }
         .onAppear(perform: {
             populateAlarms()
         })
+        .navigationBarBackButtonHidden(true)
     }
     
     func dateFormatter(dataObject: AlarmInfo) -> (startTime: String, endTime: String) {
@@ -139,11 +134,11 @@ struct AlarmHome: View {
 }
 
 final class CurrentAlarmInfo: ObservableObject {
-    @Published var currStartHour: Int = 0
+    @Published var currStartHour: Int = 1
     @Published var currStartMinute: Int = 0
     @Published var currStartMeridiem: String = "am"
 
-    @Published var currEndHour: Int = 0
+    @Published var currEndHour: Int = 1
     @Published var currEndMinute: Int = 0
     @Published var currEndMeridiem: String = "am"
 }

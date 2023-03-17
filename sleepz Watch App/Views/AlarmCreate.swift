@@ -21,9 +21,33 @@ struct AlarmStartTimeView: View {
     
     var body: some View {
         VStack{
-            Text("Set wake up window end")
+            Text("Set wake up window start")
             TimePickerView(currAlarmInfo: $currAlarmInfo, isStart: true)
-            OrangeButton(content: {AlarmEndTimeView(currAlarmInfo: $currAlarmInfo)}, action: {})
+            OrangeButton(content: {AlarmEndTimeView(currAlarmInfo: $currAlarmInfo)}, action: {
+                var currEndMinute = 0
+                var currEndHour = 0
+                var currEndMeridiem = "am"
+                if (currAlarmInfo.currStartMinute >= 45) {
+                    if (currAlarmInfo.currStartHour == 11) {
+                        currEndHour = currAlarmInfo.currStartHour + 1
+                        currEndMinute = (currAlarmInfo.currStartMinute + 15) % 60
+                        currEndMeridiem = currAlarmInfo.currStartMeridiem == "am" ? "pm" : "am"
+                    } else {
+                        currEndHour = currAlarmInfo.currStartHour + 1
+                        currEndMinute = (currAlarmInfo.currStartMinute + 15) % 60
+                        currEndMeridiem = currAlarmInfo.currStartMeridiem
+                    }
+                } else {
+                    currEndHour = currAlarmInfo.currStartHour
+                    currEndMinute = currAlarmInfo.currStartMinute + 15
+                    currEndMeridiem = currAlarmInfo.currStartMeridiem
+                }
+                
+                currAlarmInfo.currEndHour = currEndHour
+                currAlarmInfo.currEndMinute = currEndMinute
+                currAlarmInfo.currEndMeridiem = currEndMeridiem
+            })
+                .accessibilityIdentifier("setAlarmEnd")
         }
 //        OrangeButton(content: {AlarmEndTimeView()})
     }
@@ -39,6 +63,7 @@ struct AlarmEndTimeView: View {
         OrangeButton(content: {AlarmHome(coreDM: coreDM)}, action: {
             coreDM.saveAlarm(currAlarm: currAlarmInfo)
         })
+        .accessibilityIdentifier("finishCreationButton")
 //        OrangeButton(content: {AlarmEndTimeView()})
     }
 }
