@@ -17,6 +17,7 @@ struct AlarmCreate: View {
 }
 
 struct AlarmStartTimeView: View {
+    //Creating object pass time between start and end view
     @State var currAlarmInfo = CurrentAlarmInfo()
     
     var body: some View {
@@ -27,6 +28,7 @@ struct AlarmStartTimeView: View {
                 var currEndMinute = 0
                 var currEndHour = 0
                 var currEndMeridiem = "am"
+
                 if (currAlarmInfo.currStartMinute >= 45) {
                     if (currAlarmInfo.currStartHour == 11) {
                         currEndHour = currAlarmInfo.currStartHour + 1
@@ -43,6 +45,7 @@ struct AlarmStartTimeView: View {
                     currEndMeridiem = currAlarmInfo.currStartMeridiem
                 }
                 
+                // Setting default time dif between start and end to 15 mins
                 currAlarmInfo.currEndHour = currEndHour
                 currAlarmInfo.currEndMinute = currEndMinute
                 currAlarmInfo.currEndMeridiem = currEndMeridiem
