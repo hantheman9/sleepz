@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="21507" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IGi-cB-aGO">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="21501"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="fRD-1l-P1O">
+            <objects>
+                <controller id="IGi-cB-aGO">
+                    <items>
+                        <picker height="100" alignment="left" id="Moi-jD-Gmy"/>
+                        <timer alignment="left" id="Adq-MX-hVB"/>
+                        <button width="1" alignment="left" title="Button" id="vTR-zX-3zO"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-17" y="-40"/>
+        </scene>
+    </scenes>
+</document>
