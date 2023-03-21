@@ -15,21 +15,39 @@
 		0083AE4F29A6E87500F3C197 /* DateTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083AE4E29A6E87500F3C197 /* DateTesting.swift */; };
 		00875FFD29B1B2EF00082A68 /* AlarmCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00875FFC29B1B2EF00082A68 /* AlarmCreate.swift */; };
 		0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AC298A21CB0081FC85 /* sleepzApp.swift */; };
-		0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2AE298A21CB0081FC85 /* StartView.swift */; };
 		0930A2B1298A21CE0081FC85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0930A2B0298A21CE0081FC85 /* Assets.xcassets */; };
 		0930A2B4298A21CE0081FC85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0930A2B3298A21CE0081FC85 /* Preview Assets.xcassets */; };
 		0930A2BE298A21CE0081FC85 /* sleepz_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2BD298A21CE0081FC85 /* sleepz_Watch_AppTests.swift */; };
 		0930A2C8298A21CE0081FC85 /* sleepz_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2C7298A21CE0081FC85 /* sleepz_Watch_AppUITests.swift */; };
 		0930A2CA298A21CE0081FC85 /* sleepz_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2C9298A21CE0081FC85 /* sleepz_Watch_AppUITestsLaunchTests.swift */; };
-		0930A2DB298A24AB0081FC85 /* SessionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */; };
-		0930A2DD298A25900081FC85 /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2DC298A25900081FC85 /* MetricsView.swift */; };
-		0930A2E1298A26860081FC85 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2E0298A26860081FC85 /* ElapsedTimeView.swift */; };
-		0930A2E3298A27920081FC85 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2E2298A27920081FC85 /* ControlsView.swift */; };
-		0930A2E5298A2E0E0081FC85 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2E4298A2E0E0081FC85 /* WorkoutManager.swift */; };
-		0930A2E7298A31DA0081FC85 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2E6298A31DA0081FC85 /* HeartRateManager.swift */; };
-		0930A2E9298A320E0081FC85 /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2E8298A320E0081FC85 /* HeartRate.swift */; };
 		0930A2EB298A32340081FC85 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2EA298A32340081FC85 /* AuthorizationManager.swift */; };
-		0930A2ED298A32B50081FC85 /* HKUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930A2EC298A32B50081FC85 /* HKUnit.swift */; };
+		094BED3529C95713004063C9 /* HeartRateMeasurementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3429C95713004063C9 /* HeartRateMeasurementService.swift */; };
+		094BED3629C95713004063C9 /* HeartRateMeasurementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3429C95713004063C9 /* HeartRateMeasurementService.swift */; };
+		094BED3729C95713004063C9 /* HeartRateMeasurementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3429C95713004063C9 /* HeartRateMeasurementService.swift */; };
+		094BED3929C95730004063C9 /* SleepStageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3829C95730004063C9 /* SleepStageService.swift */; };
+		094BED3A29C95730004063C9 /* SleepStageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3829C95730004063C9 /* SleepStageService.swift */; };
+		094BED3B29C95730004063C9 /* SleepStageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3829C95730004063C9 /* SleepStageService.swift */; };
+		094BED3D29C9574B004063C9 /* AccelerometerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3C29C9574B004063C9 /* AccelerometerService.swift */; };
+		094BED3E29C9574B004063C9 /* AccelerometerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3C29C9574B004063C9 /* AccelerometerService.swift */; };
+		094BED3F29C9574B004063C9 /* AccelerometerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED3C29C9574B004063C9 /* AccelerometerService.swift */; };
+		094BED4129C957AD004063C9 /* MesurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4029C957AD004063C9 /* MesurementView.swift */; };
+		094BED4229C957AD004063C9 /* MesurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4029C957AD004063C9 /* MesurementView.swift */; };
+		094BED4329C957AD004063C9 /* MesurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4029C957AD004063C9 /* MesurementView.swift */; };
+		094BED4529C957EB004063C9 /* CurrentHeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4429C957EB004063C9 /* CurrentHeartRateView.swift */; };
+		094BED4629C957EB004063C9 /* CurrentHeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4429C957EB004063C9 /* CurrentHeartRateView.swift */; };
+		094BED4729C957EB004063C9 /* CurrentHeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4429C957EB004063C9 /* CurrentHeartRateView.swift */; };
+		094BED4929C957FB004063C9 /* CurrentAccView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4829C957FB004063C9 /* CurrentAccView.swift */; };
+		094BED4A29C957FB004063C9 /* CurrentAccView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4829C957FB004063C9 /* CurrentAccView.swift */; };
+		094BED4B29C957FB004063C9 /* CurrentAccView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4829C957FB004063C9 /* CurrentAccView.swift */; };
+		094BED4D29C95811004063C9 /* CurrentSleepStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4C29C95811004063C9 /* CurrentSleepStageView.swift */; };
+		094BED4E29C95811004063C9 /* CurrentSleepStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4C29C95811004063C9 /* CurrentSleepStageView.swift */; };
+		094BED4F29C95811004063C9 /* CurrentSleepStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED4C29C95811004063C9 /* CurrentSleepStageView.swift */; };
+		094BED5129C986A6004063C9 /* HapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED5029C986A6004063C9 /* HapticsView.swift */; };
+		094BED5229C986A6004063C9 /* HapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED5029C986A6004063C9 /* HapticsView.swift */; };
+		094BED5329C986A6004063C9 /* HapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED5029C986A6004063C9 /* HapticsView.swift */; };
+		094BED5529C986FD004063C9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED5429C986FD004063C9 /* ExtensionDelegate.swift */; };
+		094BED5629C986FD004063C9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED5429C986FD004063C9 /* ExtensionDelegate.swift */; };
+		094BED5729C986FD004063C9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BED5429C986FD004063C9 /* ExtensionDelegate.swift */; };
 		C0EBA333298C4E4B00778413 /* AlarmHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EBA332298C4E4B00778413 /* AlarmHome.swift */; };
 		C0EBA335298C4E5900778413 /* ReusableComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EBA334298C4E5900778413 /* ReusableComponents.swift */; };
 /* End PBXBuildFile section */
@@ -63,7 +81,6 @@
 		00875FFC29B1B2EF00082A68 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
 		0930A2A7298A21CB0081FC85 /* sleepz Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sleepz Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2AC298A21CB0081FC85 /* sleepzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepzApp.swift; sourceTree = "<group>"; };
-		0930A2AE298A21CB0081FC85 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		0930A2B0298A21CE0081FC85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0930A2B3298A21CE0081FC85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0930A2B9298A21CE0081FC85 /* sleepz Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sleepz Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,15 +88,16 @@
 		0930A2C3298A21CE0081FC85 /* sleepz Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sleepz Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930A2C7298A21CE0081FC85 /* sleepz_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepz_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		0930A2C9298A21CE0081FC85 /* sleepz_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepz_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPagingView.swift; sourceTree = "<group>"; };
-		0930A2DC298A25900081FC85 /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
-		0930A2E0298A26860081FC85 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
-		0930A2E2298A27920081FC85 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
-		0930A2E4298A2E0E0081FC85 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
-		0930A2E6298A31DA0081FC85 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateManager.swift; sourceTree = "<group>"; };
-		0930A2E8298A320E0081FC85 /* HeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
 		0930A2EA298A32340081FC85 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
-		0930A2EC298A32B50081FC85 /* HKUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKUnit.swift; sourceTree = "<group>"; };
+		094BED3429C95713004063C9 /* HeartRateMeasurementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateMeasurementService.swift; sourceTree = "<group>"; };
+		094BED3829C95730004063C9 /* SleepStageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStageService.swift; sourceTree = "<group>"; };
+		094BED3C29C9574B004063C9 /* AccelerometerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerService.swift; sourceTree = "<group>"; };
+		094BED4029C957AD004063C9 /* MesurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesurementView.swift; sourceTree = "<group>"; };
+		094BED4429C957EB004063C9 /* CurrentHeartRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHeartRateView.swift; sourceTree = "<group>"; };
+		094BED4829C957FB004063C9 /* CurrentAccView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccView.swift; sourceTree = "<group>"; };
+		094BED4C29C95811004063C9 /* CurrentSleepStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSleepStageView.swift; sourceTree = "<group>"; };
+		094BED5029C986A6004063C9 /* HapticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsView.swift; sourceTree = "<group>"; };
+		094BED5429C986FD004063C9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		C0EBA332298C4E4B00778413 /* AlarmHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHome.swift; sourceTree = "<group>"; };
 		C0EBA334298C4E5900778413 /* ReusableComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,12 +141,13 @@
 			children = (
 				C0EBA332298C4E4B00778413 /* AlarmHome.swift */,
 				0083AE4729A17C3600F3C197 /* AlarmEdit.swift */,
-				0930A2AE298A21CB0081FC85 /* StartView.swift */,
-				0930A2DA298A24AB0081FC85 /* SessionPagingView.swift */,
-				0930A2E2298A27920081FC85 /* ControlsView.swift */,
-				0930A2DC298A25900081FC85 /* MetricsView.swift */,
 				00875FFC29B1B2EF00082A68 /* AlarmCreate.swift */,
 				00680A7629B4139B0005C38C /* OnboardingView.swift */,
+				094BED4029C957AD004063C9 /* MesurementView.swift */,
+				094BED4429C957EB004063C9 /* CurrentHeartRateView.swift */,
+				094BED4829C957FB004063C9 /* CurrentAccView.swift */,
+				094BED4C29C95811004063C9 /* CurrentSleepStageView.swift */,
+				094BED5029C986A6004063C9 /* HapticsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				0083AE4E29A6E87500F3C197 /* DateTesting.swift */,
+				094BED3429C95713004063C9 /* HeartRateMeasurementService.swift */,
+				094BED3829C95730004063C9 /* SleepStageService.swift */,
+				094BED3C29C9574B004063C9 /* AccelerometerService.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,14 +194,10 @@
 				0930A2AC298A21CB0081FC85 /* sleepzApp.swift */,
 				0083AE4C29A6E23C00F3C197 /* Scheduler.swift */,
 				C0EBA334298C4E5900778413 /* ReusableComponents.swift */,
-				0930A2E4298A2E0E0081FC85 /* WorkoutManager.swift */,
-				0930A2E8298A320E0081FC85 /* HeartRate.swift */,
-				0930A2E6298A31DA0081FC85 /* HeartRateManager.swift */,
 				0930A2EA298A32340081FC85 /* AuthorizationManager.swift */,
-				0930A2EC298A32B50081FC85 /* HKUnit.swift */,
-				0930A2E0298A26860081FC85 /* ElapsedTimeView.swift */,
 				0930A2B0298A21CE0081FC85 /* Assets.xcassets */,
 				0930A2B2298A21CE0081FC85 /* Preview Content */,
+				094BED5429C986FD004063C9 /* ExtensionDelegate.swift */,
 			);
 			path = "sleepz Watch App";
 			sourceTree = "<group>";
@@ -339,26 +357,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0930A2AF298A21CB0081FC85 /* StartView.swift in Sources */,
+				094BED3929C95730004063C9 /* SleepStageService.swift in Sources */,
 				00680A7729B4139B0005C38C /* OnboardingView.swift in Sources */,
-				0930A2E9298A320E0081FC85 /* HeartRate.swift in Sources */,
+				094BED3529C95713004063C9 /* HeartRateMeasurementService.swift in Sources */,
 				006DB1E5298EAE8E0071AED8 /* Model.xcdatamodeld in Sources */,
 				C0EBA335298C4E5900778413 /* ReusableComponents.swift in Sources */,
-				0930A2E5298A2E0E0081FC85 /* WorkoutManager.swift in Sources */,
 				00875FFD29B1B2EF00082A68 /* AlarmCreate.swift in Sources */,
-				0930A2ED298A32B50081FC85 /* HKUnit.swift in Sources */,
 				0930A2AD298A21CB0081FC85 /* sleepzApp.swift in Sources */,
-				0930A2E1298A26860081FC85 /* ElapsedTimeView.swift in Sources */,
 				0083AE4D29A6E23C00F3C197 /* Scheduler.swift in Sources */,
-				0930A2E7298A31DA0081FC85 /* HeartRateManager.swift in Sources */,
 				006DB1E4298EAE810071AED8 /* PersistentController.swift in Sources */,
-				0930A2DD298A25900081FC85 /* MetricsView.swift in Sources */,
+				094BED4129C957AD004063C9 /* MesurementView.swift in Sources */,
+				094BED5529C986FD004063C9 /* ExtensionDelegate.swift in Sources */,
+				094BED4929C957FB004063C9 /* CurrentAccView.swift in Sources */,
+				094BED4D29C95811004063C9 /* CurrentSleepStageView.swift in Sources */,
 				C0EBA333298C4E4B00778413 /* AlarmHome.swift in Sources */,
 				0930A2EB298A32340081FC85 /* AuthorizationManager.swift in Sources */,
+				094BED5129C986A6004063C9 /* HapticsView.swift in Sources */,
 				0083AE4F29A6E87500F3C197 /* DateTesting.swift in Sources */,
+				094BED4529C957EB004063C9 /* CurrentHeartRateView.swift in Sources */,
 				0083AE4829A17C3600F3C197 /* AlarmEdit.swift in Sources */,
-				0930A2E3298A27920081FC85 /* ControlsView.swift in Sources */,
-				0930A2DB298A24AB0081FC85 /* SessionPagingView.swift in Sources */,
+				094BED3D29C9574B004063C9 /* AccelerometerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +384,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				094BED5629C986FD004063C9 /* ExtensionDelegate.swift in Sources */,
+				094BED4A29C957FB004063C9 /* CurrentAccView.swift in Sources */,
+				094BED4E29C95811004063C9 /* CurrentSleepStageView.swift in Sources */,
+				094BED5229C986A6004063C9 /* HapticsView.swift in Sources */,
+				094BED3A29C95730004063C9 /* SleepStageService.swift in Sources */,
+				094BED4629C957EB004063C9 /* CurrentHeartRateView.swift in Sources */,
+				094BED3E29C9574B004063C9 /* AccelerometerService.swift in Sources */,
 				0930A2BE298A21CE0081FC85 /* sleepz_Watch_AppTests.swift in Sources */,
+				094BED3629C95713004063C9 /* HeartRateMeasurementService.swift in Sources */,
+				094BED4229C957AD004063C9 /* MesurementView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +401,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				094BED4F29C95811004063C9 /* CurrentSleepStageView.swift in Sources */,
+				094BED4729C957EB004063C9 /* CurrentHeartRateView.swift in Sources */,
+				094BED3B29C95730004063C9 /* SleepStageService.swift in Sources */,
 				0930A2C8298A21CE0081FC85 /* sleepz_Watch_AppUITests.swift in Sources */,
 				0930A2CA298A21CE0081FC85 /* sleepz_Watch_AppUITestsLaunchTests.swift in Sources */,
+				094BED5729C986FD004063C9 /* ExtensionDelegate.swift in Sources */,
+				094BED4B29C957FB004063C9 /* CurrentAccView.swift in Sources */,
+				094BED4329C957AD004063C9 /* MesurementView.swift in Sources */,
+				094BED3F29C9574B004063C9 /* AccelerometerService.swift in Sources */,
+				094BED3729C95713004063C9 /* HeartRateMeasurementService.swift in Sources */,
+				094BED5329C986A6004063C9 /* HapticsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +572,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Debug;
 		};
@@ -573,7 +609,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Release;
 		};
@@ -594,7 +630,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sleepz Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sleepz Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Debug;
 		};
@@ -616,7 +652,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sleepz Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sleepz Watch App";
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Release;
 		};
@@ -636,7 +672,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_TARGET_NAME = "sleepz Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Debug;
 		};
@@ -657,7 +693,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_TARGET_NAME = "sleepz Watch App";
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Release;
 		};

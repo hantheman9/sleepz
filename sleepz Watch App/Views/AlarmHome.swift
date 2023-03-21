@@ -21,15 +21,54 @@ import HealthKit
 
 
 
+
 struct AlarmHome: View {
+    
     let coreDM: PersistentController
     
     @State private var alarms: [AlarmInfo] = [AlarmInfo]()
-    
+    @State private var showSessionView: Bool = false
+    @State private var currentDate = Date()
+
+        
     private func populateAlarms() {
         alarms = coreDM.getAllAlarms()
     }
     
+    private func setupTimer() {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.currentDate = Date()
+        }
+    }
+    
+    private func checkAlarmTime() {
+        for alarm in alarms {
+            if isWithinActiveAlarmTime(dataObject: alarm) {
+                self.showSessionView = true
+                break
+            } else {
+                self.showSessionView = false
+            }
+        }
+    }
+    
+    private func isWithinActiveAlarmTime(dataObject: AlarmInfo) -> Bool {
+        let currentDateTime = Date()
+        let calendar = Calendar.current
+        
+        let currentHour = calendar.component(.hour, from: currentDateTime)
+        let currentMinute = calendar.component(.minute, from: currentDateTime)
+        
+        let currentTotalMinutes = currentHour * 60 + currentMinute
+        let startTotalMinutes = dataObject.startHour * 60 + dataObject.startMinute
+        let endTotalMinutes = dataObject.endHour * 60 + dataObject.endMinute
+        
+        if dataObject.isActive && currentTotalMinutes >= startTotalMinutes && currentTotalMinutes <= endTotalMinutes {
+            return true
+        }
+        
+        return false
+    }
     
     var body: some View {
         VStack{
@@ -63,10 +102,7 @@ struct AlarmHome: View {
                         Toggle(isOn: alarmBinding) {
                             EmptyView()
                         }
-                        
-//                        Toggle(isOn: coreDM.toggleActive(of: $alarm)) {
-//                            EmptyView()
-//                        }
+
                     }
                     .navigationTitle("My alarms")
                     .navigationBarBackButtonHidden(true)
@@ -94,12 +130,19 @@ struct AlarmHome: View {
                         }
                 ).accessibilityIdentifier("createAlarmButton")
             }
-                
+            
         }
         .onAppear(perform: {
             populateAlarms()
+            setupTimer()
         })
-        .navigationBarBackButtonHidden(true)
+        .onChange(of: currentDate, perform: { _ in
+            checkAlarmTime()
+        })
+        .sheet(isPresented: $showSessionView) {
+            StartSession(alarmStartTime: Date())
+        }
+        
     }
     
     func dateFormatter(dataObject: AlarmInfo) -> (startTime: String, endTime: String) {

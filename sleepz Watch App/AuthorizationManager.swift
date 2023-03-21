@@ -6,7 +6,7 @@ class AuthorizationManager {
         // Create health store.
         let healthStore = HKHealthStore()
 
-        // Check if there is health data available.
+        // Check if there is health data available.t
         if (!HKHealthStore.isHealthDataAvailable()) {
             print("No health data is available.")
             completionHandler(false)
